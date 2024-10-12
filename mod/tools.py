@@ -1,4 +1,5 @@
 import hashlib
+import random
 import re
 
 
@@ -33,6 +34,15 @@ def calculate_md5(string: str, base="hexstr"):
         return md5_bytes.hex()
     else:
         raise ValueError("Invalid base. Supported values are 'hex', 'dec', 'hexstr', and 'bin'.")
+
+def random_str(lenth:int, base:str=r"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*"):
+    """
+    生成随机字符串
+    :param lenth: 字符串长度
+    :param base: 字符串基础字符集
+    :return: 随机字符串
+    """
+    return ''.join(random.choice(base) for _ in range(lenth))
 
 
 def merge_dictionaries(dict_a: dict, dict_b: dict) -> dict:
@@ -85,3 +95,6 @@ def standard_lrc(lrc_text: str) -> str:
     else:
         return re.sub(r'[\ufeff\u200b]', '',
                           lrc_text.replace("\r\n", "\n"))
+
+if __name__ == '__main__':
+    print(random_str(8))

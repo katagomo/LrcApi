@@ -13,6 +13,9 @@ v1_bp = Blueprint('v1', __name__, url_prefix='/api/v1')
 # Blueprint直接复制app配置项
 v1_bp.config = app.config.copy()
 
+jel_bp = Blueprint('jellyfin', __name__, url_prefix='/api/jellyfin')
+jel_bp.config = app.config.copy()
+
 
 # 缓存逻辑
 cache_dir = './flask_cache'
@@ -51,4 +54,4 @@ def get_base_path():
 
 src_path = os.path.join(get_base_path(), 'src')  # 静态资源路径
 
-__all__ = ['app', 'v1_bp', 'cache', 'make_cache_key', 'logger', 'src_path']
+__all__ = ['app', 'v1_bp', 'jel_bp', 'cache', 'make_cache_key', 'logger', 'src_path']
