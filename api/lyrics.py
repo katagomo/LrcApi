@@ -116,7 +116,7 @@ def lyrics_translate():
 
 Attention
 -保持原文的LRC文本格式；禁止翻译专辑/作者/注释等任何非歌词内容
--不要直接翻译，基于整体进行意译
+-你需要基于音乐的整体情感进行高质量的意译，而不是直接翻译
 -结合上下文内容，充分理解歌词中部分词语的隐喻
 -注意音韵美
 -歌词可能存在重复，请照常翻译，禁止省略。
@@ -172,7 +172,7 @@ Example
 你需要遵守以下思维链：
 - Firstly, Infer the country of the author of this song based on the language. Such as [language: en], [language: th], [language: fr], etc.
  - If the language is Chinese, please output [language: zh], ignore all the steps after this, then use [FINAL] tags to enclose the original lyrics and end the translation.
-- Next, translate the complete lyrics, encapsulating your LRC format within the [PRE]...[/PRE] tags.
+- Next, do the First translation. Translate the complete lyrics to **中文**, encapsulating the translated LRC format within the [PRE]...[/PRE] tags.
 - Then, analyze the emotional undertones of the lyrics and provide a brief overview of their central theme.
 - And, assess the shortcomings of the initial translation based on the aforementioned insights.
 - Before the final translation, you must ensure that you DID NOT translate any lyrics that are in Chinese. If the Chinese part is translated, please restore it.
